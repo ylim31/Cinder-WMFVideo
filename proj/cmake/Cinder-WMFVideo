@@ -25,7 +25,7 @@ if(NOT TARGET Cinder-WMFVideo)
     # If your Cinder block has no source code but instead pre-build libraries,
     # you can specify all of them here (uncomment the below line and adjust to your needs).
     # Make sure to use the libraries for the right platform.
-    # # target_link_libraries(Cinder-WMFVideo "${Cinder-OpenCV_PROJECT_ROOT}/lib/libopencv_core.a")
+    # target_link_libraries(Cinder-WMFVideo "${Cinder-OpenCV_PROJECT_ROOT}/lib/libopencv_core.a")
 
     if(NOT TARGET cinder)
         include("${CINDER_PATH}/proj/cmake/configure.cmake")
