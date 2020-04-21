@@ -13,7 +13,7 @@ if(NOT TARGET Cinder-WMFVideo)
             )
 
     # Create the library!
-    add_library(Cinder-Notifications ${SOURCE_LIST})
+    add_library(Cinder-WMFVideo ${SOURCE_LIST})
 
     # Add include directories.
     # Notice that `cinderblock.xml` has `<includePath>src</includePath>`.
