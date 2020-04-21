@@ -1,4 +1,4 @@
-if(NOT TARGET Cinder-WMFVideo.cmake)
+if(NOT TARGET Cinder-WMFVideo)
     # Define ${Cinder-WMFVideo_PROJECT_ROOT}. ${CMAKE_CURRENT_LIST_DIR} is just the current directory.
     get_filename_component(Cinder-WMFVideo_PROJECT_ROOT "${CMAKE_CURRENT_LIST_DIR}/../.." ABSOLUTE)
 
@@ -13,13 +13,13 @@ if(NOT TARGET Cinder-WMFVideo.cmake)
             )
 
     # Create the library!
-    add_library(Cinder-WMFVideo.cmake ${SOURCE_LIST})
+    add_library(Cinder-WMFVideo ${SOURCE_LIST})
 
     # Add include directories.
     # Notice that `cinderblock.xml` has `<includePath>src</includePath>`.
     # So you need to set `../../src/` to include.
-    target_include_directories(Cinder-WMFVideo.cmake PUBLIC "${Cinder-WMFVideo_PROJECT_ROOT}/src" )
-    target_include_directories(Cinder-WMFVideo.cmake SYSTEM BEFORE PUBLIC  "${CINDER_PATH}/include" )
+    target_include_directories(Cinder-WMFVideo PUBLIC "${Cinder-WMFVideo_PROJECT_ROOT}/src" )
+    target_include_directories(Cinder-WMFVideo SYSTEM BEFORE PUBLIC  "${CINDER_PATH}/include" )
 
 
     # If your Cinder block has no source code but instead pre-build libraries,
