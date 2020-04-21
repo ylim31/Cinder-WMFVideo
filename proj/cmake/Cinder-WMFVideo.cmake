@@ -33,6 +33,6 @@ if(NOT TARGET Cinder-WMFVideo)
                 "${CINDER_PATH}/${CINDER_LIB_DIRECTORY}"
                 "$ENV{CINDER_PATH}/${CINDER_LIB_DIRECTORY}")
     endif()
-    target_link_libraries(Cinder-WMFVideo.cmake PRIVATE cinder)
+    target_link_libraries(Cinder-WMFVideo PRIVATE cinder)
 
 endif()
