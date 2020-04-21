@@ -1,4 +1,4 @@
-if(NOT TARGET Cinder-WMFVideo)
+if(NOT TARGET Cinder-WMFVideo.cmake)
     # Define ${Cinder-WMFVideo_PROJECT_ROOT}. ${CMAKE_CURRENT_LIST_DIR} is just the current directory.
     get_filename_component(Cinder-WMFVideo_PROJECT_ROOT "${CMAKE_CURRENT_LIST_DIR}/../.." ABSOLUTE)
 
@@ -13,19 +13,19 @@ if(NOT TARGET Cinder-WMFVideo)
             )
 
     # Create the library!
-    add_library(Cinder-WMFVideo ${SOURCE_LIST})
+    add_library(Cinder-WMFVideo.cmake ${SOURCE_LIST})
 
     # Add include directories.
     # Notice that `cinderblock.xml` has `<includePath>src</includePath>`.
     # So you need to set `../../src/` to include.
-    target_include_directories(Cinder-WMFVideo PUBLIC "${Cinder-WMFVideo_PROJECT_ROOT}/src" )
-    target_include_directories(Cinder-WMFVideo SYSTEM BEFORE PUBLIC  "${CINDER_PATH}/include" )
+    target_include_directories(Cinder-WMFVideo.cmake PUBLIC "${Cinder-WMFVideo_PROJECT_ROOT}/src" )
+    target_include_directories(Cinder-WMFVideo.cmake SYSTEM BEFORE PUBLIC  "${CINDER_PATH}/include" )
 
 
     # If your Cinder block has no source code but instead pre-build libraries,
     # you can specify all of them here (uncomment the below line and adjust to your needs).
     # Make sure to use the libraries for the right platform.
-    # target_link_libraries(Cinder-WMFVideo "${Cinder-OpenCV_PROJECT_ROOT}/lib/libopencv_core.a")
+    # target_link_libraries(Cinder-WMFVideo.cmake "${Cinder-OpenCV_PROJECT_ROOT}/lib/libopencv_core.a")
 
     if(NOT TARGET cinder)
         include("${CINDER_PATH}/proj/cmake/configure.cmake")
@@ -33,6 +33,6 @@ if(NOT TARGET Cinder-WMFVideo)
                 "${CINDER_PATH}/${CINDER_LIB_DIRECTORY}"
                 "$ENV{CINDER_PATH}/${CINDER_LIB_DIRECTORY}")
     endif()
-    target_link_libraries(Cinder-WMFVideo PRIVATE cinder)
+    target_link_libraries(Cinder-WMFVideo.cmake PRIVATE cinder)
 
 endif()
